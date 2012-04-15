@@ -25,6 +25,7 @@ create a file myssh.ini:
  type = ssh
  username = root
  password = root
+ port = 22
  ;update fail2ban from this host to remote host 192.168.1.33
  cmd_1 = service fail2ban stop
  updatedir_local_2 = /etc/fail2ban

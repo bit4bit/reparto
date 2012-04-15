@@ -4,7 +4,7 @@ ini:
   password: password
   port: port
 reparto:
-  conecting: Conecting a %1
+  conecting: Conecting to %1 port %2
   closing: Closing conection  %1
   type_not_supported: Type  %1 not supported
   require_username: Required username

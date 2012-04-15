@@ -23,8 +23,10 @@ rescue LoadError
   require 'logger'
 end
 
+
 REPARTO_VERSION = 0.0
-$t = R18n.from_env 'i18n/','es'
+
+$t = R18n.from_env 'i18n/'
 $logs = Logger.new(STDOUT)
 $threads = []
 
@@ -40,15 +42,14 @@ class SSHClient
     @port = port
     @username = username
     @password = password
-
     @actions = []
   end
 
   #ejecuta acciones
   def do
-    $logs.debug($t.reparto.conecting(@ip))
+    $logs.debug($t.reparto.conecting(@ip, @port))
 
-    Net::SSH.start(@ip, @username, :password => @password) do |ssh|
+    Net::SSH.start(@ip, @username, :password => @password, :port => @port) do |ssh|
       @actions.each do |action|
         name = action[:action]
 
