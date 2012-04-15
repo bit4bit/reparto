@@ -1,0 +1,45 @@
+=Reparto
+Do things on multiple ssh connections
+
+==Requirements
+you can install from rubygems or well from your distribution repositories
+
+* net/ssh
+* net/sftp
+* ini
+* r18n-desktop
+
+
+
+==You can
+* Call commands
+* Copy files
+* Copy directories
+* Update directories
+* Easy file .ini with your actions
+
+
+create a file myssh.ini:
+ ;this a comment to host 192.168.1.33
+ [192.168.1.33]
+ type = ssh
+ username = root
+ password = root
+ ;update fail2ban from this host to remote host 192.168.1.33
+ cmd_1 = service fail2ban stop
+ updatedir_local_2 = /etc/fail2ban
+ updatedir_remote_2 = /etc/fail2ban
+ cmd_3 = service fail2ban start
+ ;backups directory
+ cpdir_local_4 = /etc/fail2ban
+ cpdir_remote_4 = /var/backups/fail2ban/20120415
+ ;update/copy one file
+ cp_local_5 = /etc/rc.local
+ cp_remote_5 = /etc/rc.local
+
+ ;another host actions
+ [....]
+ ....
+
+then from a terminal call script, and look the output:
+ $ ruby reparto.rb myssh.ini
