@@ -1,0 +1,41 @@
+ini:
+  type: tipo
+  username: usuario
+  password: clave
+  port: puerto
+reparto:
+  conecting: Conectando a %1 puerto %2
+  closing: Cerrando conexion de %1
+  type_not_supported: Tipo %1 no soportado
+  require_username: Nombre de usuario requerido
+  require_password: Clave requerida
+  port_numeric: Puerto solo numerico
+  usage: "
+Reparto v%2 do things on multiple clients\n
+%1: <file .ini>\n
+ejemplo, myclients.ini:\n\n
+[192.168.1.33]\n
+tipo = ssh\n
+usuario = user\n
+clave = pass\n
+;ejecuta comando \n
+cmd_1 = hostname\n
+;ejecuta otro comando\n
+cmd_2 = date\n
+;copia un directorio no existente en el equipo remoto\n
+cpdir_local_1 = /root/data\n
+cpdir_remote_1 = /root/data\n
+;copia un archivo\n
+cp_local_1 = /etc/rc.local\n
+cp_remote_1 = /root/backups/rc.local\n
+;actualiza directory remoto con local\n
+updatedir_1 = /root/data\n
+
+;otro equipo\n
+[.....]\n
+...\n
+
+;otro equipo\n
+[....]\n
+..
+"

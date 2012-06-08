@@ -26,7 +26,7 @@ end
 
 REPARTO_VERSION = 0.0
 
-$t = R18n.from_env 'i18n/'
+$t = R18n.from_env File.join Gem.datadir('Reparto'), 'i18n/'
 $logs = Logger.new(STDOUT)
 $threads = []
 

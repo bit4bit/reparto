@@ -1,0 +1,41 @@
+ini:
+  type: type
+  username: username
+  password: password
+  port: port
+reparto:
+  conecting: Conecting to %1 port %2
+  closing: Closing conection  %1
+  type_not_supported: Type  %1 not supported
+  require_username: Required username
+  require_password: Required password
+  port_numeric: Port only numeric
+  usage: "
+Reparto v%2 do things on multiple clients\n
+%1: <file .ini>\n
+example, myclients.ini:\n\n
+[192.168.1.33]\n
+type = ssh\n
+username = user\n
+password = pass\n
+;execute command\n
+cmd_1 = hostname\n
+;execute another command\n
+cmd_2 = date\n
+;copy new dir\n
+cpdir_local_1 = /root/data\n
+cpdir_remote_1 = /root/data\n
+;cp file\n
+cp_local_1 = /etc/rc.local\n
+cp_remote_1 = /root/backups/rc.local\n
+;update dir remote\n
+updatedir_1 = /root/data\n
+
+;another host\n
+[.....]\n
+...\n
+
+;another host\n
+[....]\n
+..
+"

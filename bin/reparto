@@ -6,13 +6,12 @@ require 'reparto'
 #Muestra ayuda de uso
 def usage
   print $t.reparto.usage($0, REPARTO_VERSION)
+  print "\n"
   exit -1
 end
 
-if $0 == __FILE__
-  usage if ARGV.size != 1 or not File.exist? ARGV[0]
-  r = Reparto.new(ARGV[0])
-  $threads.each do |th|
-    th.join
-  end
+usage() if ARGV.size != 1 or not File.exist? ARGV[0]
+r = Reparto.new(ARGV[0])
+$threads.each do |th|
+  th.join
 end
